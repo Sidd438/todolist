@@ -7,11 +7,13 @@ from .serializers import *
 from rest_framework import generics
 import django_filters.rest_framework
 from rest_framework.permissions import IsAuthenticated
+from .pagination import *
 # Create your views here.
 
 class ActivityListAPIView(generics.ListCreateAPIView):
     serializer_class = ActivityListSerializer
     permission_classes = [IsAuthenticated]
+    pagination_class = StandardResultsSetPagination
     filter_backends = [django_filters.rest_framework.DjangoFilterBackend]
     filterset_fields = ['do_time']
 
