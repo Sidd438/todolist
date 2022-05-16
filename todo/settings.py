@@ -142,3 +142,9 @@ EMAIL_HOST_USER = 'todolistapp45@gmail.com'
 EMAIL_HOST_PASSWORD = 'monkseed'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 EMAIL_PORT = 465
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ]
+}
